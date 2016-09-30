@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+// This is brian's application
 public class MainActivity extends AppCompatActivity {
 
     /**
