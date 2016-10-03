@@ -3,7 +3,7 @@
     <string name="app_name">Tic Tac Toe</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-    <string name="action_settings">wtf</string>
+    <string name="action_settings">TestString</string>
 
     <string name="button_1">  X  </string>
 </resources>
