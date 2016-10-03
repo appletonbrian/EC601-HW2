@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ttt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="bappleton.androidapp.ttt">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Tic Tac Toe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:textStyle="bold"
+            android:textAlignment="center"
+            tools:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:id="@+id/button1"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:textSize="30sp"
+                android:onClick="pressButton1"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button2"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton2"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button3"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button4"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton4"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button5"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton5"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button6"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button7"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton7"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button8"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton8"/>
+
+            <Button
+                android:text=" "
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/button9"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:onClick="pressButton9"/>
+        </LinearLayout>
+
+        <TextView
+            android:text="GameInfo"
+            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_height="50dp"
+            android:paddingTop="5dp" />
+
+        <Button
+            android:text="New Game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_ng"
+            android:background="@android:color/holo_blue_light"
+            android:textSize="18sp"
+            android:onClick="newGame"/>
+    </LinearLayout>
+
+</RelativeLayout>
