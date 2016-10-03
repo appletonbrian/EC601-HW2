@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-// This is brian's application
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     // 2 --> O (computer player)
     int[ ] game_entries = new int[9];
     int gameOver;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
