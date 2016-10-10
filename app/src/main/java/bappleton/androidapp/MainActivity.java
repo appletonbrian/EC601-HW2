@@ -35,18 +35,26 @@ public class MainActivity extends AppCompatActivity {
     // 2 --> O (computer player)
     int[ ] game_entries = new int[9];
     int gameOver;
+    int wins, losses, ties;
+    int difficulty; //0=easy, 1=medium, 2=hard
+    int playingAs; //user's character: 0=X (default), 1=O
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt); //activity_main
 
-        gameOver = 3;
+        gameOver = 3;//default to a game over, tied state
+        wins = 0;
+        losses = 0;
+        ties = 0;
+        playingAs=0;//default to user playing as x
+        difficulty=0;//default to easy difficulty
         View view = null;
         printGame(view);
         TextView infoText;
         infoText=(TextView)findViewById(R.id.textView);
-        infoText.setText("Press NEW GAME to begin.");
+        infoText.setText("Press anywhere to begin.");
     }
 
 
@@ -65,11 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -78,15 +88,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton2(View view) {
@@ -104,11 +119,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -117,15 +134,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton3(View view) {
@@ -143,11 +165,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -156,15 +180,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton4(View view) {
@@ -182,11 +211,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -195,15 +226,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton5(View view) {
@@ -221,11 +257,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -234,15 +272,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton6(View view) {
@@ -260,11 +303,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -273,15 +318,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton7(View view) {
@@ -299,11 +349,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -312,15 +364,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton8(View view) {
@@ -338,11 +395,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -351,15 +410,20 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
+        }
+        else {
+            newGame(view);
         }
     }
     public void pressButton9(View view) {
@@ -377,11 +441,13 @@ public class MainActivity extends AppCompatActivity {
                 printGame(view);
                 if (gameOver==1) {
                     //human just won
-                    infoText.setText("You win! Press NEW GAME to play again.");
+                    infoText.setText("You win! Press anywhere to play again.");
+                    wins = wins + 1;
                 }
                 else if (gameOver==3) {
                     //tie
-                    infoText.setText("You tied! Press NEW GAME to play again.");
+                    infoText.setText("You tied! Press anywhere to play again.");
+                    ties = ties + 1;
                 }
                 else {
                     //human did not just win or tie, computer move
@@ -390,17 +456,23 @@ public class MainActivity extends AppCompatActivity {
                     printGame(view);
                     if (gameOver==2) {
                         //computer just won
-                        infoText.setText("You lose. Press NEW GAME to play again.");
+                        infoText.setText("You lose. Press anywhere to play again.");
+                        losses = losses + 1;
                     }
                     else if(gameOver==3) {
                         //computer just tied
-                        infoText.setText("You tied! Press NEW GAME to play again.");
+                        infoText.setText("You tied! Press anywhere to play again.");
+                        ties = ties + 1;
                     }
                 }
 
             }
         }
+        else {
+            newGame(view);
+        }
     }
+
 
 
 
@@ -423,101 +495,254 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void computerMove(View view) {
-        //implemented somewhat-intelligent computer player
-        //blocks a direct win if one is on the board, otherwise takes the next available position
-
-        //block horizontal wins
-        if(game_entries[0]==1 && game_entries[1]==1 && game_entries[2] == 0){
-            game_entries[2]=2;
-        }
-        else if(game_entries[1]==1 && game_entries[2]==1 && game_entries[0] == 0) {
-            game_entries[0]=2;
-        }
-        else if(game_entries[0]==1 && game_entries[2]==1 && game_entries[1] == 0) {
-            game_entries[1]=2;
-        }
-        else if(game_entries[4]==1 && game_entries[5]==1 && game_entries[3] == 0) {
-            game_entries[3]=2;
-        }
-        else if(game_entries[3]==1 && game_entries[4]==1 && game_entries[5] == 0) {
-            game_entries[5]=2;
-        }
-        else if(game_entries[3]==1 && game_entries[5]==1 && game_entries[4] == 0) {
-            game_entries[4]=2;
-        }
-        else if(game_entries[7]==1 && game_entries[8]==1 && game_entries[6] == 0) {
-            game_entries[6]=2;
-        }
-        else if(game_entries[6]==1 && game_entries[7]==1 && game_entries[8] == 0) {
-            game_entries[8]=2;
-        }
-        else if(game_entries[6]==1 && game_entries[8]==1 && game_entries[7] == 0) {
-            game_entries[7]=2;
-        }
-        //block vertical wins
-        else if(game_entries[0]==1 && game_entries[3]==1 && game_entries[6] == 0) {
-            game_entries[6]=2;
-        }
-        else if(game_entries[3]==1 && game_entries[6]==1 && game_entries[0] == 0) {
-            game_entries[0]=2;
-        }
-        else if(game_entries[0]==1 && game_entries[6]==1 && game_entries[3] == 0) {
-            game_entries[3]=2;
-        }
-        else if(game_entries[1]==1 && game_entries[4]==1 && game_entries[7] == 0) {
-            game_entries[7]=2;
-        }
-        else if(game_entries[4]==1 && game_entries[7]==1 && game_entries[1] == 0) {
-            game_entries[1]=2;
-        }
-        else if(game_entries[1]==1 && game_entries[7]==1 && game_entries[4] == 0) {
-            game_entries[4]=2;
-        }
-        else if(game_entries[2]==1 && game_entries[5]==1 && game_entries[8] == 0) {
-            game_entries[8]=2;
-        }
-        else if(game_entries[5]==1 && game_entries[8]==1 && game_entries[2] == 0) {
-            game_entries[2]=2;
-        }
-        else if(game_entries[2]==1 && game_entries[8]==1 && game_entries[5] == 0) {
-            game_entries[5]=2;
-        }
-        //block diagonal wins
-        else if(game_entries[0]==1 && game_entries[4]==1 && game_entries[8] == 0) {
-            game_entries[8]=2;
-        }
-        else if(game_entries[4]==1 && game_entries[8]==1 && game_entries[0] == 0) {
-            game_entries[0]=2;
-        }
-        else if(game_entries[0]==1 && game_entries[8]==1 && game_entries[4] == 0) {
-            game_entries[4]=2;
-        }
-        else if(game_entries[2]==1 && game_entries[4]==1 && game_entries[6] == 0) {
-            game_entries[6]=2;
-        }
-        else if(game_entries[4]==1 && game_entries[6]==1 && game_entries[2] == 0) {
-            game_entries[2]=2;
-        }
-        else if(game_entries[2]==1 && game_entries[6]==1 && game_entries[4] == 0) {
-            game_entries[4]=2;
-        }
-        else {
-            //if no direct win can be counteracted, choose a random position
+        //difficulty levels dictated by variable difficulty
+        //0: easy - computer makes entirely random moves
+        //1: medium - computer tries to block obvious wins
+        //2: hard - computer tries to block obvious wins, and execute its own obvious wins
+        if (difficulty==0){
+            //make a random move
             int count = 0;
             int rand_selection;
             List<Integer> open_positions = new ArrayList<Integer>();
-            for(int i=0; i<9; i++){
+            for (int i = 0; i < 9; i++) {
                 //count how many board positions are open
                 //store the indicies with open positions in open_positions
-                if(game_entries[i]==0){
-                    count = count+1;
+                if (game_entries[i] == 0) {
+                    count = count + 1;
                     open_positions.add(i);
                 }
             }
             //choose a random spot and make a move
             Random rand = new Random();
             rand_selection = rand.nextInt(count);
-            game_entries[open_positions.get(rand_selection)]=2;
+            game_entries[open_positions.get(rand_selection)] = 2;
+        }
+        else if (difficulty==1) {
+            //block horizontal wins
+            if (game_entries[0] == 1 && game_entries[1] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[1] == 1 && game_entries[2] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[2] == 1 && game_entries[1] == 0) {
+                game_entries[1] = 2;
+            } else if (game_entries[4] == 1 && game_entries[5] == 1 && game_entries[3] == 0) {
+                game_entries[3] = 2;
+            } else if (game_entries[3] == 1 && game_entries[4] == 1 && game_entries[5] == 0) {
+                game_entries[5] = 2;
+            } else if (game_entries[3] == 1 && game_entries[5] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[7] == 1 && game_entries[8] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[6] == 1 && game_entries[7] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[6] == 1 && game_entries[8] == 1 && game_entries[7] == 0) {
+                game_entries[7] = 2;
+            }
+            //block vertical wins
+            else if (game_entries[0] == 1 && game_entries[3] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[3] == 1 && game_entries[6] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[6] == 1 && game_entries[3] == 0) {
+                game_entries[3] = 2;
+            } else if (game_entries[1] == 1 && game_entries[4] == 1 && game_entries[7] == 0) {
+                game_entries[7] = 2;
+            } else if (game_entries[4] == 1 && game_entries[7] == 1 && game_entries[1] == 0) {
+                game_entries[1] = 2;
+            } else if (game_entries[1] == 1 && game_entries[7] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[2] == 1 && game_entries[5] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[5] == 1 && game_entries[8] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[2] == 1 && game_entries[8] == 1 && game_entries[5] == 0) {
+                game_entries[5] = 2;
+            }
+            //block diagonal wins
+            else if (game_entries[0] == 1 && game_entries[4] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[4] == 1 && game_entries[8] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[8] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[2] == 1 && game_entries[4] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[4] == 1 && game_entries[6] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[2] == 1 && game_entries[6] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else {
+                //if no direct win can be counteracted, choose a random position
+                int count = 0;
+                int rand_selection;
+                List<Integer> open_positions = new ArrayList<Integer>();
+                for (int i = 0; i < 9; i++) {
+                    //count how many board positions are open
+                    //store the indicies with open positions in open_positions
+                    if (game_entries[i] == 0) {
+                        count = count + 1;
+                        open_positions.add(i);
+                    }
+                }
+                //choose a random spot and make a move
+                Random rand = new Random();
+                rand_selection = rand.nextInt(count);
+                game_entries[open_positions.get(rand_selection)] = 2;
+            }
+        }
+        else if (difficulty==2){
+            //check possible horizontal wins
+            if (game_entries[0]==2 && game_entries[1]==2 && game_entries[2]==0){
+                game_entries[2] = 2;
+            }
+            else if (game_entries[1]==2 && game_entries[2]==2 && game_entries[0]==0){
+                game_entries[0] = 2;
+            }
+            else if (game_entries[0]==2 && game_entries[2]==2 && game_entries[1]==0){
+                game_entries[1] = 2;
+            }
+            else if (game_entries[3]==2 && game_entries[4]==2 && game_entries[5]==0){
+                game_entries[5] = 2;
+            }
+            else if (game_entries[4]==2 && game_entries[5]==2 && game_entries[3]==0){
+                game_entries[3] = 2;
+            }
+            else if (game_entries[3]==2 && game_entries[5]==2 && game_entries[4]==0){
+                game_entries[4] = 2;
+            }
+            else if (game_entries[6]==2 && game_entries[7]==2 && game_entries[8]==0){
+                game_entries[8] = 2;
+            }
+            else if (game_entries[7]==2 && game_entries[8]==2 && game_entries[6]==0){
+                game_entries[6] = 2;
+            }
+            else if (game_entries[6]==2 && game_entries[8]==2 && game_entries[7]==0){
+                game_entries[7] = 2;
+            }
+            //check possible vertical wins
+            else if (game_entries[0]==2 && game_entries[3]==2 && game_entries[6]==0){
+                game_entries[6] = 2;
+            }
+            else if (game_entries[3]==2 && game_entries[6]==2 && game_entries[0]==0){
+                game_entries[0] = 2;
+            }
+            else if (game_entries[0]==2 && game_entries[6]==2 && game_entries[3]==0){
+                game_entries[3] = 2;
+            }
+            else if (game_entries[1]==2 && game_entries[4]==2 && game_entries[7]==0){
+                game_entries[7] = 2;
+            }
+            else if (game_entries[4]==2 && game_entries[7]==2 && game_entries[1]==0){
+                game_entries[1] = 2;
+            }
+            else if (game_entries[1]==2 && game_entries[7]==2 && game_entries[4]==0){
+                game_entries[4] = 2;
+            }
+            else if (game_entries[2]==2 && game_entries[5]==2 && game_entries[8]==0){
+                game_entries[8] = 2;
+            }
+            else if (game_entries[5]==2 && game_entries[8]==2 && game_entries[2]==0){
+                game_entries[2] = 2;
+            }
+            else if (game_entries[2]==2 && game_entries[8]==2 && game_entries[5]==0){
+                game_entries[5] = 2;
+            }
+            //check possible diagonal wins
+            else if (game_entries[0]==2 && game_entries[4]==2 && game_entries[8]==0){
+                game_entries[8] = 2;
+            }
+            else if (game_entries[4]==2 && game_entries[8]==2 && game_entries[0]==0){
+                game_entries[0] = 2;
+            }
+            else if (game_entries[0]==2 && game_entries[8]==2 && game_entries[4]==0){
+                game_entries[4] = 2;
+            }
+            else if (game_entries[2]==2 && game_entries[4]==2 && game_entries[6]==0){
+                game_entries[6] = 2;
+            }
+            else if (game_entries[6]==2 && game_entries[4]==2 && game_entries[2]==0){
+                game_entries[2] = 2;
+            }
+            else if (game_entries[6]==2 && game_entries[2]==2 && game_entries[4]==0){
+                game_entries[4] = 2;
+            }
+            //block horizontal wins
+            else if (game_entries[0] == 1 && game_entries[1] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[1] == 1 && game_entries[2] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[2] == 1 && game_entries[1] == 0) {
+                game_entries[1] = 2;
+            } else if (game_entries[4] == 1 && game_entries[5] == 1 && game_entries[3] == 0) {
+                game_entries[3] = 2;
+            } else if (game_entries[3] == 1 && game_entries[4] == 1 && game_entries[5] == 0) {
+                game_entries[5] = 2;
+            } else if (game_entries[3] == 1 && game_entries[5] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[7] == 1 && game_entries[8] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[6] == 1 && game_entries[7] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[6] == 1 && game_entries[8] == 1 && game_entries[7] == 0) {
+                game_entries[7] = 2;
+            }
+            //block vertical wins
+            else if (game_entries[0] == 1 && game_entries[3] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[3] == 1 && game_entries[6] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[6] == 1 && game_entries[3] == 0) {
+                game_entries[3] = 2;
+            } else if (game_entries[1] == 1 && game_entries[4] == 1 && game_entries[7] == 0) {
+                game_entries[7] = 2;
+            } else if (game_entries[4] == 1 && game_entries[7] == 1 && game_entries[1] == 0) {
+                game_entries[1] = 2;
+            } else if (game_entries[1] == 1 && game_entries[7] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[2] == 1 && game_entries[5] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[5] == 1 && game_entries[8] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[2] == 1 && game_entries[8] == 1 && game_entries[5] == 0) {
+                game_entries[5] = 2;
+            }
+            //block diagonal wins
+            else if (game_entries[0] == 1 && game_entries[4] == 1 && game_entries[8] == 0) {
+                game_entries[8] = 2;
+            } else if (game_entries[4] == 1 && game_entries[8] == 1 && game_entries[0] == 0) {
+                game_entries[0] = 2;
+            } else if (game_entries[0] == 1 && game_entries[8] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            } else if (game_entries[2] == 1 && game_entries[4] == 1 && game_entries[6] == 0) {
+                game_entries[6] = 2;
+            } else if (game_entries[4] == 1 && game_entries[6] == 1 && game_entries[2] == 0) {
+                game_entries[2] = 2;
+            } else if (game_entries[2] == 1 && game_entries[6] == 1 && game_entries[4] == 0) {
+                game_entries[4] = 2;
+            }
+            //take the center if possible
+            else if(game_entries[4]==0){
+                game_entries[4]=2;
+            }
+            else {
+                //if there's nothing else to do, choose a random position
+                int count = 0;
+                int rand_selection;
+                List<Integer> open_positions = new ArrayList<Integer>();
+                for (int i = 0; i < 9; i++) {
+                    //count how many board positions are open
+                    //store the indicies with open positions in open_positions
+                    if (game_entries[i] == 0) {
+                        count = count + 1;
+                        open_positions.add(i);
+                    }
+                }
+                //choose a random spot and make a move
+                Random rand = new Random();
+                rand_selection = rand.nextInt(count);
+                game_entries[open_positions.get(rand_selection)] = 2;
+            }
+
         }
 
     }
@@ -597,20 +822,93 @@ public class MainActivity extends AppCompatActivity {
                 game_buttons[i].setText("");
             }
             else if (game_entries[i]==1) {
-                game_buttons[i].setText("X");
+                if (playingAs==0) {
+                    //default, user playing as X
+                    game_buttons[i].setText("X");
+                }
+                else if (playingAs==1){
+                    //reverse logic, print O's intead of X's
+                    game_buttons[i].setText("O");
+                }
             }
             else if (game_entries[i]==2) {
-                game_buttons[i].setText("O");
+                if (playingAs==0) {
+                    //default, computer playing as O
+                    game_buttons[i].setText("O");
+                }
+                else if (playingAs==1) {
+                    //reverse logic, print X's instead of O's
+                    game_buttons[i].setText("X");
+                }
             }
-        }
 
-        Button newgame = (Button)findViewById(R.id.button_ng);
-        if (gameOver==0) {
-            newgame.setBackgroundColor(Color.GRAY);
+            TextView stats;
+            stats=(TextView)findViewById(R.id.textview_stats);
+            StringBuilder sb = new StringBuilder();
+            sb.append("Wins: ");
+            sb.append(wins);
+            sb.append(" (");
+            if (wins+ties+losses != 0) {
+                sb.append(100*wins / (wins + ties + losses));
+            }
+            else {
+                sb.append(0);
+            }
+            sb.append("%)   ");
+            sb.append("Ties: ");
+            sb.append(ties);
+            sb.append(" (");
+            if (wins+ties+losses != 0) {
+                sb.append(100*ties / (wins + ties + losses));
+            }
+            else {
+                sb.append(0);
+            }
+            sb.append("%)   ");
+            String stat_text = sb.toString();
+            stats.setText(stat_text);
         }
-        else {
-            newgame.setBackgroundColor(Color.CYAN);
+    }
+
+    public void changePlayer(View view) {
+        TextView player;
+        player=(TextView)findViewById(R.id.button_xo);
+        if (playingAs==0) {
+            //switch user from x to o
+            playingAs=1;
+            player.setText("Playing as O");
         }
+        else if (playingAs==1){
+            //switch user from o to x
+            playingAs=0;
+            player.setText("Playing as X");
+        }
+        printGame(view);
+    }
+
+    public void changeDifficulty(View view){
+        TextView diff_text;
+        diff_text=(TextView)findViewById(R.id.button_difficulty);
+        if (difficulty==0){
+            //change from easy to medium
+            difficulty=1;
+            diff_text.setText("Medium");
+        }
+        else if (difficulty==1){
+            //change from medium to hard
+            difficulty=2;
+            diff_text.setText("Hard");
+        }
+        else if (difficulty==2) {
+            //change from hard to easy
+            difficulty=0;
+            diff_text.setText("Easy");
+        }
+        //reset statistics
+        wins = 0;
+        losses = 0;
+        ties = 0;
+        printGame(view);
     }
 
 }
