@@ -12,8 +12,14 @@ This application was developed in order to become more familiar with Android app
 - **UI resource file for TTT interface:** /app/src/main/res/layout/activity_ttt.xml 
 - **Main source code for TTT application:** /app/src/main/java/bappleton/androidapp/MainActivity.java
 
-###Application screenshot:
-![alt tag](https://github.com/appletonbrian/EC601-HW2/blob/master/TTT_screenshot.JPG)
+###New in v.1.1
+- Eliminated unnecessary "New Game" button. Now, simply click any position to start a new game!
+- Added two new difficulty levels (easy and hard). Swap difficulty anytime during gameplay.
+- You can now play as X *or* O!
+- Added game statistics
+
+###V1.1 Application screenshot:
+![alt tag](https://github.com/appletonbrian/EC601-HW2/blob/master/TTT_screenshotV11.JPG)
 
 ###Google Developer Console screenshot:
 ![alt tag](https://github.com/appletonbrian/EC601-HW2/blob/master/Pending%20publication.JPG)
